@@ -56,12 +56,10 @@ public class MtsTest
 
     @Test
     public void testContinueButton() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        WebElement cookiePopup = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("cookie")));
-        WebElement closeButton = cookiePopup.findElement(By.className("cookie__close"));
-        closeButton.click();
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("cookie")));
+
         WebElement optionElement = driver.findElement(By.xpath("//option[@value='Услуги связи']"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", optionElement);
         optionElement.click();
         WebDriverWait formWait = new WebDriverWait(driver, 10);
         formWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='pay-connection']")));
