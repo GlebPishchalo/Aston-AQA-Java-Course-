@@ -1,19 +1,9 @@
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.Request;
 
-import java.net.http.HttpResponse;
-
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
-import static io.restassured.RestAssured.*;
-import static org.junit.Assert.*;
+
 
 public class PostManEchoTest {
 
